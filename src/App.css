@@ -37,3 +37,42 @@
     transform: rotate(360deg);
   }
 }
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(65, 145, 92);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(20, 173, 71);
+}
+
+.ant-tabs-ink-bar-animated {
+  background: rgb(20, 173, 71);
+}
+/* .ant-tabs-tab.ant-tabs-tab-active {
+  color: rgb(20, 173, 71);
+} */
+
+.ant-tabs-tab.ant-tabs-tab-active {
+  color: rgb(20, 173, 71);
+}
+
+.btn:active {
+  color: rgb(20, 173, 71);
+}
+
+.ant-tabs-top > .ant-tabs-nav {
+  margin: 0px;
+}

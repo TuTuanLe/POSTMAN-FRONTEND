@@ -1,8 +1,9 @@
 import React, { ComponentType } from 'react';
+import { TemplateType, FETCH_DATA } from './Constant';
 
 export interface ApiTestingProps {
   data: {
-    template: any;
+    template: { [key: string]: TemplateType };
   };
   dispatch: {
     onFetchProject?: () => Promise<void>;
@@ -17,7 +18,7 @@ export const withAptTestingController = <P,>(
   return (props: P) => {
     const LogicProps: ApiTestingProps = {
       data: {
-        template: '',
+        template: FETCH_DATA,
       },
       dispatch: {},
     };
