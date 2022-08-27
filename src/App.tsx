@@ -1,11 +1,7 @@
 import React, { FC } from 'react';
-import { Button } from 'antd';
 import './App.css';
+import { ApiTesting } from './screens/apiTesting';
 
-const App: FC = () => (
-  <div className="App">
-    <Button type="primary">Button</Button>
-  </div>
-);
+const App: FC = () => <ApiTesting />;
 
 export default App;
