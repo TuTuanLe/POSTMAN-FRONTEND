@@ -1,5 +1,5 @@
 import { SendOutlined } from '@ant-design/icons';
-import { Button, Input, Select, Tabs } from 'antd';
+import { Button, Form, Input, Select, Tabs } from 'antd';
 import { Option } from 'antd/lib/mentions';
 import React, { ReactElement, useRef, useState } from 'react';
 import { METHOD } from '../Constant';
@@ -39,6 +39,14 @@ export const RequestApi = (): React.ReactElement => {
         );
     };
 
+    const onFinish = (values: any) => {
+        console.log('Success:', values);
+    };
+
+    const onFinishFailed = (errorInfo: any) => {
+        console.log('Failed:', errorInfo);
+    };
+
     const renderContentForRequest = (painKey: string): ReactElement => {
         switch (painKey) {
             case PANES.SETTINGS:
@@ -54,7 +62,49 @@ export const RequestApi = (): React.ReactElement => {
                     </div>
                 );
             case PANES.PAYLOAD:
-                return <div className="content">payload</div>;
+                return (
+                    <div className="content">
+                        <Form
+                            name="basic"
+                            labelCol={{ span: 2 }}
+                            wrapperCol={{ span: 22 }}
+                            initialValues={{ remember: true }}
+                            onFinish={onFinish}
+                            onFinishFailed={onFinishFailed}
+                            autoComplete="off"
+                        >
+                            <Form.Item
+                                name="facility"
+                                label="facility"
+                                rules={[{ required: true }]}
+                            >
+                                <Select placeholder="Please change facilityId" allowClear>
+                                    <Option value="male">facilityId 1</Option>
+                                    <Option value="female">facilityId 2</Option>
+                                    <Option value="other">facilityId 3</Option>
+                                </Select>
+                            </Form.Item>
+                            <Form.Item name="robotId" label="robot" rules={[{ required: true }]}>
+                                <Select placeholder="Please change robotId" allowClear>
+                                    <Option value="male">robotId 1</Option>
+                                    <Option value="female">robotId 2</Option>
+                                    <Option value="other">robotId 3</Option>
+                                </Select>
+                            </Form.Item>
+                            <Form.Item
+                                name="elevatorId"
+                                label="elevator"
+                                rules={[{ required: true }]}
+                            >
+                                <Select placeholder="Please change elevatorId" allowClear>
+                                    <Option value="male">elevatorId 1</Option>s
+                                    <Option value="female">elevatorId 2</Option>
+                                    <Option value="other">elevatorId 3</Option>
+                                </Select>
+                            </Form.Item>
+                        </Form>
+                    </div>
+                );
 
             default:
                 return <></>;
