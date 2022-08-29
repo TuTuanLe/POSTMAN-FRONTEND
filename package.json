@@ -18,7 +18,9 @@
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
     "styled-components": "^5.3.5",
+    "svelte-jsoneditor": "^0.6.5",
     "typescript": "^4.8.2",
+    "vanilla-jsoneditor": "^0.6.6",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

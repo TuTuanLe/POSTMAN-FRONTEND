@@ -45,49 +45,18 @@ export const ChooseTemplate = (props: ChooseTemplateProps): React.ReactElement =
             {Object.entries(dataGroupByCategory).map(([key, value]): ReactElement => {
                 let temp = value as TemplateType[];
                 return (
-                    <>
-                        {key === CATEGORY.ELEVATOR && (
-                            <Menu.ItemGroup
-                                title={
-                                    <>
-                                        <CompressOutlined /> {CATEGORY.ELEVATOR}
-                                    </>
-                                }
-                            >
-                                {temp.map((item) => {
-                                    return <Menu.Item key={item.key}>{item.title.en}</Menu.Item>;
-                                })}
-                            </Menu.ItemGroup>
-                        )}
-                        {key === CATEGORY.EQUIPMENT && (
-                            <Menu.ItemGroup
-                                title={
-                                    <>
-                                        <GiftOutlined />
-                                        {CATEGORY.EQUIPMENT}
-                                    </>
-                                }
-                            >
-                                {temp.map((item) => {
-                                    return <Menu.Item key={item.key}>{item.title.en}</Menu.Item>;
-                                })}
-                            </Menu.ItemGroup>
-                        )}
-                        {key === CATEGORY.ROBOT && (
-                            <Menu.ItemGroup
-                                title={
-                                    <>
-                                        <InboxOutlined />
-                                        {CATEGORY.ROBOT}
-                                    </>
-                                }
-                            >
-                                {temp.map((item) => {
-                                    return <Menu.Item key={item.key}>{item.title.en}</Menu.Item>;
-                                })}
-                            </Menu.ItemGroup>
-                        )}
-                    </>
+                    <Menu.ItemGroup
+                        title={
+                            <>
+                                <InboxOutlined />
+                                {CATEGORY.ROBOT}
+                            </>
+                        }
+                    >
+                        {temp.map((item) => {
+                            return <Menu.Item key={item.key}>{item.title.en}</Menu.Item>;
+                        })}
+                    </Menu.ItemGroup>
                 );
             })}
         </Menu>
@@ -98,10 +67,7 @@ export const ChooseTemplate = (props: ChooseTemplateProps): React.ReactElement =
             <div className="header">
                 <Button className="btn" type="primary">
                     <HolderOutlined />
-
-                    {selectPane.content.category === CATEGORY.EQUIPMENT && CATEGORY.EQUIPMENT}
-                    {selectPane.content.category === CATEGORY.ELEVATOR && CATEGORY.ELEVATOR}
-                    {selectPane.content.category === CATEGORY.ROBOT && CATEGORY.ROBOT}
+                    {selectPane.content.category}
                 </Button>
 
                 <Dropdown overlay={menu} trigger={['click']}>
