@@ -6,6 +6,9 @@ import { ContentJson } from '../RequestApi';
 import { SettingsStyle } from './setting.styles';
 
 export type SettingsProps = {
+    content: {
+        json: ContentJson;
+    };
     setContent: React.Dispatch<
         React.SetStateAction<{
             json: ContentJson;
@@ -14,45 +17,63 @@ export type SettingsProps = {
 };
 
 export const Settings = (props: SettingsProps): ReactElement => {
-    const { setContent } = props;
+    const { content, setContent } = props;
 
-    const onFinish = (values: any) => {
-        console.log('Success:', values);
-    };
-
-    const onFinishFailed = (errorInfo: any) => {
-        console.log('Failed:', errorInfo);
-    };
     return (
         <SettingsStyle>
-            <Form
-                name="basic"
-                labelCol={{ span: 2 }}
-                wrapperCol={{ span: 22 }}
-                initialValues={{ remember: true }}
-                onFinish={onFinish}
-                onFinishFailed={onFinishFailed}
-                autoComplete="off"
-            >
+            <Form labelCol={{ span: 2 }} wrapperCol={{ span: 22 }}>
                 <Form.Item name="facility" label="facility" rules={[{ required: true }]}>
-                    <Select placeholder="Please change facilityId" allowClear>
-                        <Option value="male">facilityId 1</Option>
-                        <Option value="female">facilityId 2</Option>
-                        <Option value="other">facilityId 3</Option>
+                    <Select
+                        onChange={(value) => {
+                            setContent({
+                                // ...content,
+                                json: {
+                                    ...content.json,
+                                    facility: value,
+                                },
+                            });
+                        }}
+                        placeholder="Please change facilityId"
+                    >
+                        <Option value="facilityId1">facilityId 1</Option>
+                        <Option value="facilityId2">facilityId 2</Option>
+                        <Option value="facilityId3">facilityId 3</Option>
                     </Select>
                 </Form.Item>
                 <Form.Item name="robotId" label="robot" rules={[{ required: true }]}>
-                    <Select placeholder="Please change robotId" allowClear>
-                        <Option value="male">robotId 1</Option>
-                        <Option value="female">robotId 2</Option>
-                        <Option value="other">robotId 3</Option>
+                    <Select
+                        onChange={(value) => {
+                            setContent({
+                                // ...content,
+                                json: {
+                                    ...content.json,
+                                    robot: value,
+                                },
+                            });
+                        }}
+                        placeholder="Please change robotId"
+                    >
+                        <Option value="robotId1">robotId 1</Option>
+                        <Option value="robotId2">robotId 2</Option>
+                        <Option value="robotId3">robotId 3</Option>
                     </Select>
                 </Form.Item>
                 <Form.Item name="elevatorId" label="elevator" rules={[{ required: true }]}>
-                    <Select placeholder="Please change elevatorId" allowClear>
-                        <Option value="male">elevatorId 1</Option>s
-                        <Option value="female">elevatorId 2</Option>
-                        <Option value="other">elevatorId 3</Option>
+                    <Select
+                        onChange={(value) => {
+                            setContent({
+                                // ...content,
+                                json: {
+                                    ...content.json,
+                                    elevator: value,
+                                },
+                            });
+                        }}
+                        placeholder="Please change elevatorId"
+                    >
+                        <Option value="elevatorId1">elevatorId 1</Option>
+                        <Option value="elevatorId2">elevatorId 2</Option>
+                        <Option value="elevatorId3">elevatorId 3</Option>
                     </Select>
                 </Form.Item>
             </Form>

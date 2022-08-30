@@ -192,12 +192,7 @@ export const ApiTestingDesktop = (props: ApiTestingProps): React.ReactElement =>
 
     const renderTabs = (): ReactElement => {
         return (
-            <Tabs
-                type="editable-card"
-                onChange={onChange}
-                activeKey={activeKey}
-                onEdit={onEdit as any}
-            >
+            <Tabs type="editable-card" onChange={onChange} activeKey={activeKey} onEdit={onEdit as any}>
                 {panes.map((pane, index) => (
                     <TabPane tab={pane.title} key={pane.key}>
                         {renderContent(index)}
@@ -210,11 +205,7 @@ export const ApiTestingDesktop = (props: ApiTestingProps): React.ReactElement =>
     const renderContent = (index: number): ReactElement => {
         return (
             <>
-                <ChooseTemplate
-                    data={template}
-                    selectPane={panes[index] as any}
-                    setPane={setPaneTemp}
-                />
+                <ChooseTemplate data={template} selectPane={panes[index] as any} setPane={setPaneTemp} />
                 <RequestApi />
                 <ResponseApi />
             </>

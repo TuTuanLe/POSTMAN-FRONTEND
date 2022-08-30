@@ -1,10 +1,4 @@
-import {
-    CompressOutlined,
-    DownOutlined,
-    GiftOutlined,
-    HolderOutlined,
-    InboxOutlined,
-} from '@ant-design/icons';
+import { CompressOutlined, DownOutlined, GiftOutlined, HolderOutlined, InboxOutlined } from '@ant-design/icons';
 import { Button, Dropdown, Menu, Space } from 'antd';
 import React, { ReactElement, useEffect } from 'react';
 import { ChooseTemplateStyles } from './ChooseTemplate.styles';
@@ -23,18 +17,15 @@ export interface ChooseTemplateProps {
 export const ChooseTemplate = (props: ChooseTemplateProps): React.ReactElement => {
     const { data, selectPane, setPane } = props;
 
-    const dataGroupByCategory = Object.values(data).reduce(
-        (previousValue: any, currentValue: any) => {
-            let key = currentValue['category'];
-            if (!previousValue[key]) {
-                previousValue[key] = [];
-            }
-            previousValue[key].push(currentValue);
+    const dataGroupByCategory = Object.values(data).reduce((previousValue: any, currentValue: any) => {
+        let key = currentValue['category'];
+        if (!previousValue[key]) {
+            previousValue[key] = [];
+        }
+        previousValue[key].push(currentValue);
 
-            return previousValue;
-        },
-        [],
-    );
+        return previousValue;
+    }, []);
 
     const menu = (
         <Menu
@@ -61,7 +52,6 @@ export const ChooseTemplate = (props: ChooseTemplateProps): React.ReactElement =
             })}
         </Menu>
     );
-    console.log(selectPane);
     return (
         <ChooseTemplateStyles>
             <div className="header">
@@ -83,8 +73,8 @@ export const ChooseTemplate = (props: ChooseTemplateProps): React.ReactElement =
                 </Dropdown>
             </div>
             <p className="description">
-                Used to call the elevator car from the robot management system. The elevator control
-                sequence is started with this publish.
+                Used to call the elevator car from the robot management system. The elevator control sequence is started
+                with this publish.
             </p>
         </ChooseTemplateStyles>
     );

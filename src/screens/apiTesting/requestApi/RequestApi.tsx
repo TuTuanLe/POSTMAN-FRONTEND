@@ -50,7 +50,7 @@ export const RequestApi = (): React.ReactElement => {
     const renderContentForRequest = (painKey: string): ReactElement => {
         switch (painKey) {
             case PANES.SETTINGS:
-                return <Settings setContent={setContent} />;
+                return <Settings content={content} setContent={setContent} />;
             case PANES.PAYLOAD:
                 return <Payload content={content} setContent={setContent} />;
             default:
