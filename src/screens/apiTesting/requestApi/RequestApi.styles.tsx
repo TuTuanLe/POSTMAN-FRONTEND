@@ -30,10 +30,5 @@ export const RequestApiStyles = styled.div`
         height: 300px;
         overflow-y: scroll;
         scroll-behavior: smooth;
-        .my-editor {
-            height: 100%;
-            display: flex;
-            border-radius: 5px;
-        }
     }
 `;

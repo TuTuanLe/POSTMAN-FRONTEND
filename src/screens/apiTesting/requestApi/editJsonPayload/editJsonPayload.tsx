@@ -1,27 +1,16 @@
 import { useEffect, useRef } from 'react';
 import { EditJsonPayloadStyle } from './editJsonPayload.styles';
 import { JSONEditor, Mode } from 'vanilla-jsoneditor';
+import { ContentJson } from '../RequestApi';
 
 export declare interface SvelteComponentConstructor {
     content: {
-        json: {
-            facilityId: string;
-            robotId: string;
-            nurseCallDeviceId: string;
-            elevatorId: string;
-        };
-        text: any;
+        json: ContentJson;
     };
     readOnly?: boolean;
     onChange?: React.Dispatch<
         React.SetStateAction<{
-            json: {
-                facilityId: string;
-                robotId: string;
-                nurseCallDeviceId: string;
-                elevatorId: string;
-            };
-            text: any;
+            json: ContentJson;
         }>
     >;
 }
