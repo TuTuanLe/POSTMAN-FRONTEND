@@ -1,14 +1,10 @@
 import { SendOutlined } from '@ant-design/icons';
-import { Button, Form, Input, Select, Tabs } from 'antd';
+import { Button, Input, Select, Tabs } from 'antd';
 import { Option } from 'antd/lib/mentions';
 import React, { ReactElement, useRef, useState } from 'react';
 import { METHOD } from '../Constant';
-import { JSONEditor } from 'svelte-jsoneditor';
 
 import { RequestApiStyles } from './RequestApi.styles';
-import JsonEditor from 'svelte-jsoneditor/components/JSONEditor.svelte';
-import { connect } from 'http2';
-import { EditJsonPayload } from './editJsonPayload';
 import { Settings } from './settings';
 import { Payload } from './payload';
 const initialPanes = [
@@ -29,7 +25,7 @@ export const RequestApi = (): React.ReactElement => {
     const [activeKey, setActiveKey] = useState(initialPanes[0].key);
     const [panes] = useState(initialPanes);
     const { TabPane } = Tabs;
-    const newTabIndex = useRef(0);
+    const newTabIndex = useRef<number>(0);
 
     const onChange = (newActiveKey: string) => {
         setActiveKey(newActiveKey);

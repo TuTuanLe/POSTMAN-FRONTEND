@@ -1,6 +1,6 @@
-import { CompressOutlined, DownOutlined, GiftOutlined, HolderOutlined, InboxOutlined } from '@ant-design/icons';
-import { Button, Dropdown, Menu, Space } from 'antd';
-import React, { ReactElement, useEffect } from 'react';
+import { DownOutlined, HolderOutlined, InboxOutlined } from '@ant-design/icons';
+import { Button, Dropdown, Menu } from 'antd';
+import React, { ReactElement } from 'react';
 import { ChooseTemplateStyles } from './ChooseTemplate.styles';
 import { CATEGORY, TemplateType } from '../Constant';
 
