@@ -14,18 +14,27 @@ export enum CATEGORY {
     ELEVATOR = 'ELEVATOR',
 }
 
+export type ApiConnection = {
+    title: string;
+    type: CATEGORY;
+    mode: 'single' | 'multiple';
+    component: 'select' | 'input';
+};
+
+export type ApiResource = {
+    [id: string]: ApiConnection;
+};
+
 export type ConnectionType = {
     type: REQUEST;
     http: {
         method: METHOD;
         endpoint: string;
         payload: {
-            facilityId?: string;
-            robotId?: string;
+            [id: string]: any;
         };
         resource: {
-            facilityId?: string;
-            robotId?: string;
+            [id: string]: ApiConnection;
         };
     };
 };
@@ -66,8 +75,12 @@ export const FETCH_DATA: { [key: string]: TemplateType } = {
                     robotId: 'robot',
                 },
                 resource: {
-                    facilityId: 'FACILITY',
-                    robotId: 'ROBOT',
+                    xxx: {
+                        title: 'facility',
+                        component: 'input',
+                        mode: 'single',
+                        type: CATEGORY.ELEVATOR,
+                    },
                 },
             },
         },
@@ -93,8 +106,12 @@ export const FETCH_DATA: { [key: string]: TemplateType } = {
                     robotId: 'robot',
                 },
                 resource: {
-                    facilityId: 'FACILITY',
-                    robotId: 'ROBOT',
+                    xxx: {
+                        title: 'facility',
+                        component: 'input',
+                        mode: 'single',
+                        type: CATEGORY.ELEVATOR,
+                    },
                 },
             },
         },
@@ -120,8 +137,12 @@ export const FETCH_DATA: { [key: string]: TemplateType } = {
                     robotId: 'robot',
                 },
                 resource: {
-                    facilityId: 'FACILITY',
-                    robotId: 'ROBOT',
+                    xxx: {
+                        title: 'facility',
+                        component: 'input',
+                        mode: 'single',
+                        type: CATEGORY.ELEVATOR,
+                    },
                 },
             },
         },
@@ -147,8 +168,12 @@ export const FETCH_DATA: { [key: string]: TemplateType } = {
                     robotId: 'robot',
                 },
                 resource: {
-                    facilityId: 'FACILITY',
-                    robotId: 'ROBOT',
+                    xxx: {
+                        title: 'facility',
+                        component: 'input',
+                        mode: 'single',
+                        type: CATEGORY.ELEVATOR,
+                    },
                 },
             },
         },
@@ -174,8 +199,12 @@ export const FETCH_DATA: { [key: string]: TemplateType } = {
                     robotId: 'robot',
                 },
                 resource: {
-                    facilityId: 'FACILITY',
-                    robotId: 'ROBOT',
+                    xxx: {
+                        title: 'facility',
+                        component: 'input',
+                        mode: 'single',
+                        type: CATEGORY.ELEVATOR,
+                    },
                 },
             },
         },
@@ -201,8 +230,12 @@ export const FETCH_DATA: { [key: string]: TemplateType } = {
                     robotId: 'robot',
                 },
                 resource: {
-                    facilityId: 'FACILITY',
-                    robotId: 'ROBOT',
+                    xxx: {
+                        title: 'facility',
+                        component: 'input',
+                        mode: 'single',
+                        type: CATEGORY.ELEVATOR,
+                    },
                 },
             },
         },
@@ -228,8 +261,12 @@ export const FETCH_DATA: { [key: string]: TemplateType } = {
                     robotId: 'robot',
                 },
                 resource: {
-                    facilityId: 'FACILITY',
-                    robotId: 'ROBOT',
+                    xxx: {
+                        title: 'facility',
+                        component: 'input',
+                        mode: 'single',
+                        type: CATEGORY.ELEVATOR,
+                    },
                 },
             },
         },
@@ -255,8 +292,12 @@ export const FETCH_DATA: { [key: string]: TemplateType } = {
                     robotId: 'robot',
                 },
                 resource: {
-                    facilityId: 'FACILITY',
-                    robotId: 'ROBOT',
+                    xxx: {
+                        title: 'facility',
+                        component: 'input',
+                        mode: 'single',
+                        type: CATEGORY.ELEVATOR,
+                    },
                 },
             },
         },
